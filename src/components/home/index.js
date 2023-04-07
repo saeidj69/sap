@@ -1,11 +1,13 @@
 import React from "react";
-
-
+import { StyledContainer } from "./style";
+import BannerComponent from "./banner"
+import RecentMoviesComponent from "./recent-movies";
 const HomeComponent =()=>{
 return(
-    <h2>
-        heloooooooooo
-    </h2>
+    <StyledContainer>
+        <BannerComponent />
+        <RecentMoviesComponent />
+    </StyledContainer>
 )
 }
 

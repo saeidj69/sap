@@ -1,26 +1,12 @@
 import styled from "styled-components";
 
 export const StyledContainer = styled.div`
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
+display:flex;
+flex-direction:column;
+max-width:400px;
+height:100%;
 
-  .main {
-    overflow-x: hidden;
-    max-width: 1180px;
-    width: 100%;
-    margin-bottom:400px;    
-    padding:0;
-
-    @media(max-width:1180px){
-      padding: 0 40px;
-    }
-
-    @media(max-width:480px){
-      padding: 0 20px;
-    }
-  }
+background:var(--dark);
+padding:1rem;
+border-radius:0.5rem;
 `;
