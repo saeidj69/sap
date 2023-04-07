@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyledContainer } from './style';
-import jokerimg from "../../../assets/images/jokker.png"
+import jokerimg from "../../../assets/images/joker.png"
 
 function BannerComponent(props) {
     return (
