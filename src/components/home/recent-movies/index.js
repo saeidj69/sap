@@ -2,7 +2,7 @@ import React, {useState,useEffect} from 'react';
 import {StyledContainer} from "./style"
 import {getRecentMoviesApi} from "../../../api/recent-movies"
 import MoviesCarousel from './movies-carousel';
-function RecentMoviesComponent(props) {
+function RecentMoviesComponent({moviesInfo}) {
     const [moviesData,setMoviesData]=useState([]);
 
     const getRecentMovies=async()=>{

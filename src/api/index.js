@@ -14,7 +14,7 @@ const config = {
 
 const axiosInstance = axios.create(config);
 
-const token = () => typeof window ==="object" && localStorage.getItem("token");
+
 
 axiosInstance.interceptors.request.use((config) => {
 
@@ -37,36 +37,25 @@ axiosInstance.interceptors.response.use(
     config.withCredentials = true
    // document.body.classList.remove('loading-indicator');
   
-    console.log(store);
+    
     store.dispatch(deActiveLoaing())
     return response;
   },
   (error) => {
-debugger
+
    // document.body.classList.remove('loading-indicator');
     
     store.dispatch(deActiveLoaing())
      
-    // if (error.message) {
 
-    //   if (error.message === "Network Error") {
-    //     //TODO refactor this section completLy
-    //   }
-    //   const errorMessage = error.message.toLowerCase().trim();
-    //   const xmlError =
-    //     "failed to execute 'setrequestheader' on 'xmlhttprequest': value is not a valid bytestring.";
-    //   if (errorMessage === xmlError) {
-    //     //TODO refactor this section completLy
-    //   }
-    // }
 
     const { response } = error;
     if (response) {      
          
-      const originalRequest =response.config;
+      
       const  status  = response.status;
       if (status) {    
-        if(status==400)       {
+        if(status===400)       {
           notification.error({
             message: response.data.message,
             placement: "bottomLeft",
@@ -90,22 +79,7 @@ debugger
         else if (status === 401) {   
 
           localStorage.clear()          
-          window.location.href="/logout";
-          // let rf=localStorage.getItem("rfToken");
-          // originalRequest._retry = true;
-          // return axios.post(baseURL+'/auth/Authenticate/refreshToken?refreshToken='+rf).then((res)=>{
-          //   if(res.status===200){
-          //     localStorage.clear();
-          //     localStorage.setItem("token", res.data.data.token);
-          //     localStorage.setItem("rfToken", res.data.data.refreshToken);
-          //     originalRequest.headers.Authorization="Bearer "+res.data.data.token;
-          //     return axios(originalRequest);
-          //   }
-          //   if(res.status===500){
-          //     return;
-          //   }
-                      
-          // });
+          window.location.href="/logout";    
         }else{
           notification.error({
             message: `${response.data.Error.Message}`,

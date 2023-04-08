@@ -4,11 +4,11 @@ import { useNavigate } from "react-router-dom";
 import {Button} from "../uiKit"
 import { StyledContainer } from './style';
 import notFoundImage from "../../assets/images/notFound.jpg"
-function NotFound(props) {
+function NotFound() {
   const navigate=useNavigate()
 
   const navigateHome=()=>{
-    debugger
+    
     navigate('/')
   }
 

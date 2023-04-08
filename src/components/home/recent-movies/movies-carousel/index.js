@@ -12,7 +12,6 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 // import required modules
-import { Pagination } from "swiper";
 import { StyledContainer } from './style';
 
 import MovieCard from "./movie-card";
@@ -30,7 +29,7 @@ function MoviesCarousel({moviesInfo}) {
     return (
       <StyledContainer>
       {isLoading? <Spin indicator={antIcon} />:
-                  <Swiper
+      <Swiper
         slidesPerView={4.5}
         spaceBetween={15}
    
@@ -42,8 +41,8 @@ function MoviesCarousel({moviesInfo}) {
       >
         {moviesInfo && moviesInfo.length>0?
         moviesInfo.map((item)=>(
-            <SwiperSlide>
-            <MovieCard moviesItem={item} />
+            <SwiperSlide key={item.imdbID}>
+            <MovieCard moviesItem={item}  />
 
             </SwiperSlide>
 
