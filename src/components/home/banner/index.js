@@ -20,7 +20,7 @@ function BannerComponent(props) {
             24 Stories
           </span>
             </div>
-            <img style={{width:"9.375rem"}} src={jokerimg} />
+            <img style={{width:"9rem"}} src={jokerimg} />
         </StyledContainer>
     );
 }

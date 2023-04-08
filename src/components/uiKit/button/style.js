@@ -51,7 +51,7 @@ const StyledButton = Styled(Button)`
         }
     }
     &.ant-btn-primary{
-        background:var(--primary)  !important;
+        background:var(--olive)  !important;
         color:var(--pure-white)  !important;
         border:1px solid var(--gray2)  !important;
 

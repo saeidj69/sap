@@ -6,8 +6,9 @@ function RecentMoviesComponent(props) {
     const [moviesData,setMoviesData]=useState([]);
 
     const getRecentMovies=async()=>{
-        debugger
-        const res=await getRecentMoviesApi()
+        
+        let moviesType='all';
+        const res=await getRecentMoviesApi(moviesType)
         setMoviesData(res.Search)
     }
 

@@ -1,5 +1,9 @@
 
 import React from "react";
+import { useSelector } from "react-redux";
+import { LoadingOutlined } from "@ant-design/icons";
+import { Spin } from "antd";
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -13,8 +17,19 @@ import { StyledContainer } from './style';
 
 import MovieCard from "./movie-card";
 function MoviesCarousel({moviesInfo}) {
+  const isLoading = useSelector((state) => state.loading.isLoading);
+  const antIcon = (
+    <LoadingOutlined
+      style={{
+        fontSize: 24,
+        color:"var(--gray2)"
+      }}
+      spin
+    />
+  );
     return (
-        <StyledContainer>
+      <StyledContainer>
+      {isLoading? <Spin indicator={antIcon} />:
                   <Swiper
         slidesPerView={4.5}
         spaceBetween={15}
@@ -33,10 +48,15 @@ function MoviesCarousel({moviesInfo}) {
             </SwiperSlide>
 
         ))
-        :''}
+        :
+        <p>
+          There Is No Movie !
+        </p>
+        }
      
  
       </Swiper>
+      }
         </StyledContainer>
     );
 }

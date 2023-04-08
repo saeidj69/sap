@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const StyledContainer=styled.div`
+p{
+  color:var(--olive)
+}
 margin-top:2rem;
 .swiper {
   width: 100%;
