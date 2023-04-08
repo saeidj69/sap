@@ -6,7 +6,7 @@ p{
 }
 
 .img-box{
-    width:4rem;
+    width:4.2rem;
     height:6.25rem;
     border-radius:0.5rem;
     border:2px solid var(--light-gray);

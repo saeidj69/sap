@@ -14,8 +14,8 @@ function NotFound(props) {
 
     return (
         <StyledContainer>
-            <img src={notFoundImage} />
-            <Button type="primary" onClick={navigateHome}>
+            <img src={notFoundImage}  alt="404"/>
+            <Button type="primary" onClick={navigateHome} >
                 Back Home
             </Button>
         </StyledContainer>

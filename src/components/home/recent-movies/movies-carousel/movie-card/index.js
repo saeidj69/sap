@@ -4,7 +4,7 @@ function MovieCard({moviesItem}) {
     return (
         <StyledContainer>
             <div className='img-box'>
-                <img  style={{borderRadius:'0.5rem'}} src={moviesItem.Poster} />
+                <img  style={{borderRadius:'0.5rem'}} src={moviesItem.Poster} alt={moviesItem.Title}/>
             </div>
             <p>
                 {moviesItem.Title}
